@@ -1,0 +1,57 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Conn",
+            "request": "launch",
+            "mainClass": "Sistema.Ordenes.Conn.Conn",
+            "projectName": "Kappa_a421cc58"
+        },
+        {
+            "type": "java",
+            "name": "TestClienteDAO",
+            "request": "launch",
+            "mainClass": "Sistema.Ordenes.Pruebas.TestClienteDAO",
+            "projectName": "Kappa_a421cc58"
+        },
+        {
+            "type": "java",
+            "name": "TestClienteMapDAO",
+            "request": "launch",
+            "mainClass": "Sistema.Ordenes.Pruebas.TestClienteMapDAO",
+            "projectName": "Kappa_a421cc58"
+        },
+        {
+            "type": "java",
+            "name": "TestHastSetDAO",
+            "request": "launch",
+            "mainClass": "Sistema.Ordenes.Pruebas.TestHastSetDAO",
+            "projectName": "Kappa_a421cc58"
+        },
+        {
+            "type": "java",
+            "name": "TestMantenedorCliente",
+            "request": "launch",
+            "mainClass": "Sistema.Ordenes.Pruebas.TestMantenedorCliente",
+            "projectName": "Kappa_a421cc58"
+        },
+        {
+            "type": "java",
+            "name": "MntClienteControlador",
+            "request": "launch",
+            "vmArgs": "--module-path E:\\javafx-sdk-20.0.1\\lib --add-modules javafx.controls,javafx.fxml",
+            "mainClass": "Sistema.Ordenes.Vista.MntClienteControlador",
+            "projectName": "Kappa_a421cc58"
+        }
+    ]
+}

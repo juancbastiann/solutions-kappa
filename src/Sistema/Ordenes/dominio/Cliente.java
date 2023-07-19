@@ -5,6 +5,9 @@ public class Cliente {
     private String cedula;
     private String nombres;
 
+    public Cliente() {
+    }
+
     public Cliente(int codigo, String cedula, String nombres) {
         this.codigo = codigo;
         this.cedula = cedula;
