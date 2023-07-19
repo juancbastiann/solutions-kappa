@@ -8,7 +8,7 @@ import Sistema.Ordenes.Repositorio.IClienteDAO;
 public class TestClienteDAO {
 
     public static void main(String[] args) {
-        Conn conn = new Conn(); // Configurar la conexión a la base de datos
+        Conn conn = new Conn();
         IClienteDAO daoCliente = new ClienteDAO(conn);
 
         Cliente c1 = new Cliente(4, "034234567273", "Pedro Sanchez");

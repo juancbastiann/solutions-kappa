@@ -59,18 +59,17 @@ public class MntClienteControlador extends Application implements Initializable 
     private TextField txtnombres;
 
     @FXML
-    ListView<Cliente> listClientes;
-    ObservableList<Cliente> observableClientes = FXCollections.observableArrayList();
+    private ListView<Cliente> listClientes;
+    private ObservableList<Cliente> observableClientes = FXCollections.observableArrayList();
 
-    IClienteDAO daoCliente = new ClienteListDAO();
-    IMantenedorClienteFacade mantenedor = new MantenedorCliente(daoCliente);
+    private IClienteDAO daoCliente = new ClienteListDAO();
+    private IMantenedorClienteFacade mantenedor = new MantenedorCliente(daoCliente);
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-
         observableClientes.addAll(mantenedor.traerTodos());
-        listClientes.getItems().addAll(observableClientes);
-    };
+        listClientes.setItems(observableClientes);
+    }
 
     @FXML
     public void doGrabarCliente() {
@@ -80,7 +79,6 @@ public class MntClienteControlador extends Application implements Initializable 
         c.setNombres(txtnombres.getText());
 
         mantenedor.grabar(c);
-        mantenedor.traerTodos().forEach((cl) -> System.out.println(cl));
+        mantenedor.traerTodos().forEach(System.out::println);
     }
-
 }

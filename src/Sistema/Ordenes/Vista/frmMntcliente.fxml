@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="782.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sistema.Ordenes.vistas.MntClienteControlador">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="782.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sistema.Ordenes.Vista.MntClienteControlador">
    <children>
       <Button fx:id="btngrabar" layoutX="60.0" layoutY="303.0" mnemonicParsing="false" onAction="#doGrabarCliente" text="Grabar" />
       <Button fx:id="btneliminar" layoutX="161.0" layoutY="303.0" mnemonicParsing="false" text="Eliminar" />
