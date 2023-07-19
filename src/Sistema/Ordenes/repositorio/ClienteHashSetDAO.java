@@ -1,16 +1,17 @@
 package Sistema.Ordenes.Repositorio;
 
 import Sistema.Ordenes.Dominio.Cliente;
-
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
-public class ClienteListDAO implements IClienteDAO {
+public class ClienteHashSetDAO implements IClienteDAO {
 
-    List<Cliente> repositorioClientes;
+    Set<Cliente> repositorioClientes;
 
-    public ClienteListDAO() {
-        repositorioClientes = new ArrayList<>();
+    public ClienteHashSetDAO() {
+        repositorioClientes = new HashSet<>();
 
         repositorioClientes.add(new Cliente(1, "0704070000", "Juan Altamirano"));
         repositorioClientes.add(new Cliente(2, "0000002334", "Bryan Chango"));
@@ -22,20 +23,17 @@ public class ClienteListDAO implements IClienteDAO {
         repositorioClientes.add(c);
     }
 
-    @Override /* Objeto Cliente con los datos actualizados */
+    @Override
     public void actualizar(Cliente c) {
-        // *Objeto cliente del repositorio */
         Cliente cliente = buscar(c.getCodigo());
 
         if (cliente != null) {
-            /* obtenemos el indice dentro del repositorio */
-            int indice = repositorioClientes.indexOf(cliente);
-
-            /* actualizamos el objeto cliente */
-            repositorioClientes.set(indice, c);
+            repositorioClientes.remove(cliente);
+            repositorioClientes.add(c);
         }
     }
 
+    @Override
     public Cliente buscar(int codigo) {
         for (Cliente cliente : repositorioClientes) {
             if (cliente.getCodigo() == codigo)
@@ -54,7 +52,6 @@ public class ClienteListDAO implements IClienteDAO {
 
     @Override
     public List<Cliente> consultarTodos() {
-        return repositorioClientes;
+        return new ArrayList<>(repositorioClientes);
     }
-
 }

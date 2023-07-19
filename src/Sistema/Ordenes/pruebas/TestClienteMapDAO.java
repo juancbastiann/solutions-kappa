@@ -1,15 +1,14 @@
 package Sistema.Ordenes.Pruebas;
 
-import Sistema.Ordenes.Conn.Conn;
+import java.util.List;
+
 import Sistema.Ordenes.Dominio.Cliente;
-import Sistema.Ordenes.Repositorio.ClienteDAO;
+import Sistema.Ordenes.Repositorio.ClienteHashMapDAO;
 import Sistema.Ordenes.Repositorio.IClienteDAO;
 
-public class TestClienteDAO {
-
+public class TestClienteMapDAO {
     public static void main(String[] args) {
-        Conn conn = new Conn(); // Configurar la conexión a la base de datos
-        IClienteDAO daoCliente = new ClienteDAO(conn);
+        IClienteDAO daoCliente = new ClienteHashMapDAO();
 
         Cliente c1 = new Cliente(4, "034234567273", "Pedro Sanchez");
         Cliente c2 = new Cliente(5, "475892784658", "Carmen Castillo");
@@ -21,7 +20,10 @@ public class TestClienteDAO {
         c3.setNombres("TRexAsitimbayBr");
         daoCliente.actualizar(c3);
 
-        for (Cliente cliente : daoCliente.consultarTodos()) {
+        daoCliente.eliminar(1);
+
+        List<Cliente> listaClientes = daoCliente.consultarTodos();
+        for (Cliente cliente : listaClientes) {
             System.out.println(cliente);
         }
     }

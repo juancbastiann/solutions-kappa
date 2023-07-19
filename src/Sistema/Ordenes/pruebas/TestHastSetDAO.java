@@ -1,15 +1,14 @@
 package Sistema.Ordenes.Pruebas;
 
-import Sistema.Ordenes.Conn.Conn;
 import Sistema.Ordenes.Dominio.Cliente;
-import Sistema.Ordenes.Repositorio.ClienteDAO;
+import Sistema.Ordenes.Repositorio.ClienteHashSetDAO;
 import Sistema.Ordenes.Repositorio.IClienteDAO;
 
-public class TestClienteDAO {
+public class TestHastSetDAO {
 
     public static void main(String[] args) {
-        Conn conn = new Conn(); // Configurar la conexión a la base de datos
-        IClienteDAO daoCliente = new ClienteDAO(conn);
+
+        IClienteDAO daoCliente = new ClienteHashSetDAO();
 
         Cliente c1 = new Cliente(4, "034234567273", "Pedro Sanchez");
         Cliente c2 = new Cliente(5, "475892784658", "Carmen Castillo");
