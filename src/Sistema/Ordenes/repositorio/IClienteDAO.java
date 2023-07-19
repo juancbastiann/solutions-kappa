@@ -1,8 +1,8 @@
-package Sistema.Ordenes.repositorio;
+package Sistema.Ordenes.Repositorio;
 
 import java.util.List;
 
-import Sistema.Ordenes.dominio.Cliente;
+import Sistema.Ordenes.Dominio.Cliente;
 
 public interface IClienteDAO {
     abstract void insertar(Cliente c);

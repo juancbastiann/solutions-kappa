@@ -1,8 +1,8 @@
-package Sistema.Ordenes.pruebas;
+package Sistema.Ordenes.Pruebas;
 
-import Sistema.Ordenes.dominio.Cliente;
-import Sistema.Ordenes.repositorio.ClienteListDAO;
-import Sistema.Ordenes.repositorio.IClienteDAO;
+import Sistema.Ordenes.Dominio.Cliente;
+import Sistema.Ordenes.Repositorio.ClienteListDAO;
+import Sistema.Ordenes.Repositorio.IClienteDAO;
 
 public class TestClienteDAO {
 

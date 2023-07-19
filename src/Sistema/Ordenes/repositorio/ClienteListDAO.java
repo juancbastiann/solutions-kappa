@@ -1,9 +1,9 @@
-package Sistema.Ordenes.repositorio;
-
-import Sistema.Ordenes.dominio.Cliente;
+package Sistema.Ordenes.Repositorio;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import Sistema.Ordenes.Dominio.Cliente;
 
 public class ClienteListDAO implements IClienteDAO {
 

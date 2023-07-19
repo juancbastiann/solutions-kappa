@@ -1,4 +1,4 @@
-package Sistema.Ordenes.dominio;
+package Sistema.Ordenes.Dominio;
 
 public class Cliente {
     private int codigo;
