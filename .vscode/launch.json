@@ -5,13 +5,6 @@
             "type": "java",
             "name": "MntClienteControlador",
             "request": "launch",
-            "mainClass": "Sistema.Ordenes.vistas.MntClienteControlador",
-            "projectName": "Kappa_4b664fc3"
-        },
-        {
-            "type": "java",
-            "name": "MntClienteControlador",
-            "request": "launch",
             "vmArgs": "--module-path C:\\Users\\jseba\\OneDrive\\Desktop\\Código\\Java\\jdk\\javafx-sdk-20.0.2\\lib --add-modules javafx.controls,javafx.fxml",
             "mainClass": "Sistema.Ordenes.Vista.MntClienteControlador",
             "projectName": "Kappa_4b664fc3"

@@ -10,20 +10,29 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="782.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Sistema.Ordenes.Vista.MntClienteControlador">
    <children>
       <Button fx:id="btngrabar" layoutX="60.0" layoutY="303.0" mnemonicParsing="false" onAction="#doGrabarCliente" text="Grabar" />
-      <Button fx:id="btneliminar" layoutX="161.0" layoutY="303.0" mnemonicParsing="false" text="Eliminar" />
-      <Button fx:id="btncancelar" layoutX="268.0" layoutY="303.0" mnemonicParsing="false" text="Cancelar" />
-      <Label layoutX="69.0" layoutY="71.0" text="Codigo" />
-      <Label layoutX="67.0" layoutY="137.0" text="Cedula" />
-      <Label layoutX="61.0" layoutY="200.0" text="Nombres" />
-      <Label layoutX="119.0" layoutY="25.0" prefHeight="32.0" prefWidth="149.0" text="Datos Clientes">
+      <Button fx:id="btneliminar" layoutX="161.0" layoutY="303.0" mnemonicParsing="false" onAction="#doEliminarCliente" text="Eliminar" />
+      <Button fx:id="btncancelar" layoutX="268.0" layoutY="303.0" mnemonicParsing="false" onAction="#doCancelar" text="Cancelar" />
+      <Label layoutX="69.0" layoutY="83.0" text="Código">
          <font>
-            <Font size="22.0" />
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="70.0" layoutY="145.0" text="Cedula">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="69.0" layoutY="216.0" text="Nombres">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Label layoutX="119.0" layoutY="25.0" prefHeight="32.0" prefWidth="157.0" text="Datos Clientes">
+         <font>
+            <Font name="SansSerif Bold" size="22.0" />
          </font>
       </Label>
       <TextField fx:id="txtnombres" layoutX="67.0" layoutY="234.0" />
       <TextField fx:id="txtcodigo" layoutX="67.0" layoutY="101.0" />
       <TextField fx:id="txtcedula" layoutX="67.0" layoutY="163.0" />
-      <Button fx:id="btnconsultar" layoutX="239.0" layoutY="101.0" mnemonicParsing="false" text="Consultar" />
+      <Button fx:id="btnconsultar" layoutX="239.0" layoutY="101.0" mnemonicParsing="false" onAction="#doConsultarCliente" style="-fx-background-color: #7A7FC6;" text="Consultar" />
       <ListView fx:id="listClientes" layoutX="391.0" layoutY="14.0" prefHeight="317.0" prefWidth="384.0" />
    </children>
 </AnchorPane>

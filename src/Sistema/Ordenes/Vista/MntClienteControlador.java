@@ -79,6 +79,34 @@ public class MntClienteControlador extends Application implements Initializable 
         c.setNombres(txtnombres.getText());
 
         mantenedor.grabar(c);
-        mantenedor.traerTodos().forEach(System.out::println);
+        observableClientes.add(c);
     }
+
+    @FXML
+    public void doEliminarCliente() {
+        int codigo = Integer.parseInt(txtcodigo.getText());
+
+        mantenedor.eliminar(codigo);
+        observableClientes.clear();
+        observableClientes.addAll(mantenedor.traerTodos());
+    }
+
+    @FXML
+    public void doCancelar() {
+        txtcodigo.clear();
+        txtcedula.clear();
+        txtnombres.clear();
+        listClientes.getSelectionModel().clearSelection();
+    }
+
+    @FXML
+    public void doConsultarCliente() {
+        Cliente clienteSeleccionado = listClientes.getSelectionModel().getSelectedItem();
+        if (clienteSeleccionado != null) {
+            txtcodigo.setText(String.valueOf(clienteSeleccionado.getCodigo()));
+            txtcedula.setText(clienteSeleccionado.getCedula());
+            txtnombres.setText(clienteSeleccionado.getNombres());
+        }
+    }
+
 }
