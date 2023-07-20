@@ -2,7 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -33,6 +34,12 @@
       <TextField fx:id="txtcodigo" layoutX="67.0" layoutY="101.0" />
       <TextField fx:id="txtcedula" layoutX="67.0" layoutY="163.0" />
       <Button fx:id="btnconsultar" layoutX="239.0" layoutY="101.0" mnemonicParsing="false" onAction="#doConsultarCliente" style="-fx-background-color: #7A7FC6;" text="Consultar" />
-      <ListView fx:id="listClientes" layoutX="391.0" layoutY="14.0" prefHeight="317.0" prefWidth="384.0" />
+      <TableView fx:id="tcList" layoutX="398.0" layoutY="26.0" prefHeight="308.0" prefWidth="361.0">
+        <columns>
+          <TableColumn fx:id="tcCodigo" prefWidth="50.00006103515625" text="Código" />
+          <TableColumn fx:id="tcCedula" prefWidth="112.0" text="Cedula" />
+            <TableColumn fx:id="tcNombres" prefWidth="198.0" text="Nombres" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

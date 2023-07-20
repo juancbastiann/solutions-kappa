@@ -9,11 +9,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import Sistema.Ordenes.Dominio.Cliente;
@@ -59,16 +62,31 @@ public class MntClienteControlador extends Application implements Initializable 
     private TextField txtnombres;
 
     @FXML
-    private ListView<Cliente> listClientes;
-    private ObservableList<Cliente> observableClientes = FXCollections.observableArrayList();
+    private TableColumn<Cliente, Integer> tcCodigo;
+
+    @FXML
+    private TableColumn<Cliente, String> tcCedula;
+
+    @FXML
+    private TableColumn<Cliente, String> tcNombres;
+
+    @FXML
+    private TableView<Cliente> tcList;
+
+    private ObservableList<Cliente> observableClientes;
 
     private IClienteDAO daoCliente = new ClienteListDAO();
     private IMantenedorClienteFacade mantenedor = new MantenedorCliente(daoCliente);
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-        observableClientes.addAll(mantenedor.traerTodos());
-        listClientes.setItems(observableClientes);
+        List<Cliente> listaClientes = mantenedor.traerTodos();
+        observableClientes = FXCollections.observableArrayList(listaClientes);
+        tcList.setItems(observableClientes);
+
+        tcCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+        tcCedula.setCellValueFactory(new PropertyValueFactory<>("cedula"));
+        tcNombres.setCellValueFactory(new PropertyValueFactory<>("nombres"));
     }
 
     @FXML
@@ -96,16 +114,26 @@ public class MntClienteControlador extends Application implements Initializable 
         txtcodigo.clear();
         txtcedula.clear();
         txtnombres.clear();
-        listClientes.getSelectionModel().clearSelection();
+        tcList.getSelectionModel().clearSelection();
     }
 
     @FXML
     public void doConsultarCliente() {
-        Cliente clienteSeleccionado = listClientes.getSelectionModel().getSelectedItem();
-        if (clienteSeleccionado != null) {
-            txtcodigo.setText(String.valueOf(clienteSeleccionado.getCodigo()));
-            txtcedula.setText(clienteSeleccionado.getCedula());
-            txtnombres.setText(clienteSeleccionado.getNombres());
+        int codigo = Integer.parseInt(txtcodigo.getText());
+        Cliente clienteEncontrado = null;
+
+        for (Cliente cliente : observableClientes) {
+            if (cliente.getCodigo() == codigo) {
+                clienteEncontrado = cliente;
+                break;
+            }
+        }
+
+        if (clienteEncontrado != null) {
+            tcList.getSelectionModel().select(clienteEncontrado);
+        } else {
+            txtcedula.clear();
+            txtnombres.clear();
         }
     }
 
