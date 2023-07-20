@@ -5,7 +5,7 @@ import java.util.Scanner;
 import Sistema.Ordenes.Dominio.Cliente;
 import Sistema.Ordenes.Negocio.IMantenedorClienteFacade;
 import Sistema.Ordenes.Negocio.MantenedorCliente;
-import Sistema.Ordenes.Repositorio.ClienteDAO;
+import Sistema.Ordenes.Repositorio.ClienteDAOBD;
 import Sistema.Ordenes.Repositorio.IClienteDAO;
 import Sistema.Ordenes.Conn.Conn;
 
@@ -13,7 +13,7 @@ public class TestMantenedorCliente {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Conn conn = new Conn();
-        IClienteDAO daoCliente = new ClienteDAO(conn);
+        IClienteDAO daoCliente = new ClienteDAOBD(conn);
         IMantenedorClienteFacade mantenedor = new MantenedorCliente(daoCliente);
 
         int opcion;
