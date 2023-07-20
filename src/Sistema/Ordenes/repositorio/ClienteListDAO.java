@@ -22,16 +22,13 @@ public class ClienteListDAO implements IClienteDAO {
         repositorioClientes.add(c);
     }
 
-    @Override /* Objeto Cliente con los datos actualizados */
+    @Override
     public void actualizar(Cliente c) {
-        // *Objeto cliente del repositorio */
         Cliente cliente = buscar(c.getCodigo());
 
         if (cliente != null) {
-            /* obtenemos el indice dentro del repositorio */
             int indice = repositorioClientes.indexOf(cliente);
 
-            /* actualizamos el objeto cliente */
             repositorioClientes.set(indice, c);
         }
     }

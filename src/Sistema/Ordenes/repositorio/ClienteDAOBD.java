@@ -10,11 +10,11 @@ import java.util.List;
 import Sistema.Ordenes.Conn.Conn;
 import Sistema.Ordenes.Dominio.Cliente;
 
-public class ClienteDAO implements IClienteDAO {
+public class ClienteDAOBD implements IClienteDAO {
 
     private Connection conn;
 
-    public ClienteDAO(Conn conn) {
+    public ClienteDAOBD(Conn conn) {
         this.conn = conn.getConnection();
     }
 
